@@ -34,9 +34,9 @@ data class Coin(
     @field:SerializedName("price")
     val price: Double = 0.0,
     @field:SerializedName("circulatingSupply")
-    val circulatingSupply: Long = 0,
+    val circulatingSupply: Double = 0.0,
     @field:SerializedName("totalSupply")
-    val totalSupply: Long = 0,
+    val totalSupply: Double = 0.0,
     @field:SerializedName("firstSeen")
     val firstSeen: Long = 0,
     @field:SerializedName("change")

@@ -17,7 +17,7 @@
         android:gravity="center_horizontal"
         android:text="19500.471361532"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/green" />
 
     <TextView
         android:layout_width="wrap_content"

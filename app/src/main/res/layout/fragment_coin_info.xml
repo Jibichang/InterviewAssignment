@@ -13,14 +13,15 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <FrameLayout
                 android:id="@+id/headerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:paddingBottom="32dp">
 
                 <LinearLayout
                     android:id="@+id/titleLayout"
@@ -28,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
                     android:orientation="vertical"
-                    android:paddingBottom="@dimen/space_normal">
+                    android:paddingBottom="@dimen/space_large">
 
                     <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/iconImageView"
@@ -47,7 +48,7 @@
                         android:gravity="center"
                         android:text="Bitcoin (BTC)"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                        android:textColor="@android:color/white" />
+                        android:textColor="?colorOnPrimary" />
 
                     <TextView
                         android:id="@+id/descriptionTextView"
@@ -56,7 +57,8 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="Bitcoin is the first decentralized digital currency."
-                        android:textColor="@android:color/white" />
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="?colorOnPrimary" />
 
                 </LinearLayout>
             </FrameLayout>
@@ -67,12 +69,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
+        app:behavior_overlapTop="48dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dark_gray"
             android:orientation="vertical"
             android:padding="@dimen/space_large">
 

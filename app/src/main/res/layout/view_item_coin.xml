@@ -6,21 +6,35 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iconImageView"
+        style="@style/Image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_marginEnd="@dimen/space_normal"
         android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintEnd_toStartOf="@id/priceTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Bitcoin" />
 
     <TextView
+        android:id="@+id/descriptionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:ellipsize="end"
+        android:maxLines="3"
         app:layout_constraintEnd_toStartOf="@id/priceTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
         app:layout_constraintTop_toBottomOf="@id/nameTextView"
         tools:text="Bitcoin is the first decentralized digital currency." />
 

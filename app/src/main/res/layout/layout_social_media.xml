@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Social Media"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
     <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/socialLayout"

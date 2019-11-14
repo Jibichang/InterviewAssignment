@@ -1,12 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
+        <item name="android:colorBackground">@color/blue_gray</item>
+        <item name="colorOnPrimary">@android:color/white</item>
 
+        <item name="appBarLayoutStyle">@style/Widget.MaterialComponents.AppBarLayout.Primary</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
         <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
     </style>
@@ -15,6 +19,8 @@
         <item name="placeholderImage">@drawable/ic48_photo_place_holder</item>
         <item name="placeholderImageScaleType">fitXY</item>
         <item name="actualImageScaleType">centerCrop</item>
+        <item name="failureImage">@drawable/ic_error_black_24dp</item>
+        <item name="failureImageScaleType">fitXY</item>
         <item name="fadeDuration">100</item>
     </style>
 
