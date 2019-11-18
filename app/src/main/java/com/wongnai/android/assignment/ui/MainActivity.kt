@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), MainFragment.OnCoinClickListener {
     }
 
     override fun onCoinClick(id: Long) {
-        supportFragmentManager.beginTransaction().replace(R.id.flContent, CoinInfoFragment())
+        supportFragmentManager.beginTransaction().replace(R.id.flContent, CoinInfoFragment.newInstance(id))
             .addToBackStack(null)
             .commit()
     }

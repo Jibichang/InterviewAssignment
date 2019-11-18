@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,30 +9,30 @@
         android:id="@+id/priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9370.99 USD"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9370.99 USD" />
 
     <TextView
         android:id="@+id/diffTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-0.52%"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="-0.52%"
+        tools:textColor="@color/red" />
 
     <TextView
         android:id="@+id/volumeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_normal"
-        android:text="Volume: 6818750000"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/priceTextView" />
+        app:layout_constraintTop_toBottomOf="@id/priceTextView"
+        tools:text="Volume: 6818750000" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/priceChart"

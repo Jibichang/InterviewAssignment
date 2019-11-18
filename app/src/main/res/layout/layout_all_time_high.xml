@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -7,24 +8,26 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Time High"
+        android:text="@string/title_all_time_high"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
     <TextView
+        android:id="@+id/allTimeHeightTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_normal"
         android:gravity="center_horizontal"
-        android:text="19500.471361532"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="@color/green" />
+        android:textColor="@color/green"
+        tools:text="19500.471361532" />
 
     <TextView
+        android:id="@+id/allTimeHeightTimestampTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/space_small"
-        android:text="2019-12-31 00:00:00"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+        tools:text="2019-12-31 00:00:00" />
 
 </LinearLayout>
