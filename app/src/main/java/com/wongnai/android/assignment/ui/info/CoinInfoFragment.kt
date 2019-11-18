@@ -94,6 +94,7 @@ class CoinInfoFragment : Fragment() {
                         volumeTextView.text = context?.getString(R.string.coin_volume, coin.volume)
                         fillChart(coin.history)
                         fillAllTimeHeight(coin.allTimeHigh)
+                        websiteTextView.text = coin.websiteUrl
                         fillSocial(coin.socials)
                         fillStat(coin)
                     }
@@ -184,7 +185,7 @@ class CoinInfoFragment : Fragment() {
         socials.forEach {
             val v = AppCompatTextView(context).apply {
                 layoutParams = FlexboxLayout.LayoutParams(
-                    context.dpToPx(64F),
+                    context.dpToPx(96F),
                     FlexboxLayout.LayoutParams.WRAP_CONTENT
                 ).apply {
                     marginStart = context.dpToPx(R.dimen.space_normal)
@@ -192,7 +193,7 @@ class CoinInfoFragment : Fragment() {
                 }
                 setCompoundDrawablesRelativeWithIntrinsicBounds(
                     0,
-                    R.drawable.ic48_photo_place_holder,
+                    getSocialIcon(it.type),
                     0,
                     0
                 )
@@ -201,6 +202,22 @@ class CoinInfoFragment : Fragment() {
                 text = it.name
             }
             socialLayout.addView(v)
+        }
+    }
+
+    private fun getSocialIcon(type: String?): Int {
+        return when (type) {
+            "twitter" -> R.drawable.ic64_twitter
+            "telegram" -> R.drawable.ic64_telegram
+            "reddit" -> R.drawable.ic64_reddit
+            "discord" -> R.drawable.ic64_discord
+            "medium" -> R.drawable.ic64_medium
+            "bitcointalk" -> R.drawable.ic64_bitcointalk
+            "youtube" -> R.drawable.ic64_youtube
+            "facebook" -> R.drawable.ic64_facebook
+            "instagram" -> R.drawable.ic64_instagram
+            "github" -> R.drawable.ic64_github
+            else -> R.drawable.ic64_web
         }
     }
 

@@ -22,11 +22,12 @@
         app:justifyContent="space_around">
 
         <TextView
-            android:layout_width="64dp"
+            android:id="@+id/websiteTextView"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal"
             android:layout_marginEnd="@dimen/space_normal"
-            android:drawableTop="@drawable/ic48_photo_place_holder"
+            android:drawableTop="@drawable/ic64_web"
             android:drawablePadding="@dimen/space_normal"
             android:gravity="center"
             android:text="Website" />
