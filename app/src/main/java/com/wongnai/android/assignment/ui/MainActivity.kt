@@ -7,7 +7,7 @@ import com.wongnai.android.assignment.R
 import com.wongnai.android.assignment.ui.info.CoinInfoFragment
 import com.wongnai.android.assignment.ui.main.MainFragment
 
-class MainActivity : AppCompatActivity(), MainFragment.OnCoinClickListener {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +17,5 @@ class MainActivity : AppCompatActivity(), MainFragment.OnCoinClickListener {
             R.id.flContent,
             MainFragment()
         ).commit()
-    }
-
-    override fun onCoinClick(id: Long) {
-        supportFragmentManager.beginTransaction().replace(R.id.flContent, CoinInfoFragment.newInstance(id))
-            .addToBackStack(null)
-            .commit()
-    }
-
-    override fun onAttachFragment(fragment: Fragment) {
-        if (fragment is MainFragment) {
-            fragment.setOnCoinClickListener(this)
-        }
     }
 }
