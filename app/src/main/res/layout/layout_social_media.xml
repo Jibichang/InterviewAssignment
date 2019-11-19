@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal"
             android:layout_marginEnd="@dimen/space_normal"
+            android:layout_marginBottom="@dimen/space_normal"
             android:drawableTop="@drawable/ic64_web"
             android:drawablePadding="@dimen/space_normal"
             android:gravity="center"

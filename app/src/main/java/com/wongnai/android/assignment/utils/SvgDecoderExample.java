@@ -120,6 +120,8 @@ public class SvgDecoderExample {
                 ImageDecodeOptions options) {
             try {
                 SVG svg = SVG.getFromInputStream(encodedImage.getInputStream());
+                svg.setDocumentWidth("100%");
+                svg.setDocumentHeight("100%");
                 return new CloseableSvgImage(svg);
             } catch (SVGParseException e) {
                 e.printStackTrace();

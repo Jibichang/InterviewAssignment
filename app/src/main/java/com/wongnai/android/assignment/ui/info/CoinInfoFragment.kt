@@ -109,11 +109,11 @@ class CoinInfoFragment : Fragment() {
 
     private fun fillDiff(diff: Double) {
         if (diff > 0) {
-            context?.let {c ->
+            context?.let { c ->
                 diffTextView.setTextColor(ContextCompat.getColor(c, R.color.green))
             }
         } else {
-            context?.let {c ->
+            context?.let { c ->
                 diffTextView.setTextColor(ContextCompat.getColor(c, R.color.red))
             }
         }
@@ -190,6 +190,7 @@ class CoinInfoFragment : Fragment() {
                 ).apply {
                     marginStart = context.dpToPx(R.dimen.space_normal)
                     marginEnd = context.dpToPx(R.dimen.space_normal)
+                    bottomMargin = context.dpToPx(R.dimen.space_normal)
                 }
                 setCompoundDrawablesRelativeWithIntrinsicBounds(
                     0,
