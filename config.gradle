@@ -65,7 +65,3 @@ ext.dep = [
 ]
 
 def dep = ext.dep
-
-ext.wongnaiStorePassword = POS_RELEASE_STORE_PASSWORD
-ext.wongnaiKeyAlias = POS_RELEASE_KEY_ALIAS
-ext.wongnaiKeyPassword = POS_RELEASE_KEY_PASSWORD
