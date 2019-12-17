@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.XAxis
@@ -14,8 +15,14 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.wongnai.android.assignment.R
 import com.wongnai.android.assignment.api.CoinApi
+import com.wongnai.android.assignment.model.CoinInfo
+import com.wongnai.android.assignment.model.CoinResponse
+import com.wongnai.android.assignment.utils.load
+import kotlinx.android.synthetic.main.fragment_coin_info.*
 import kotlinx.android.synthetic.main.layout_coin_price.*
 import org.koin.android.ext.android.inject
+import retrofit2.Call
+import retrofit2.Response
 import kotlin.random.Random
 
 
@@ -27,13 +34,40 @@ class CoinInfoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val args = CoinInfoFragmentArgs.fromBundle(arguments!!)
+        Toast.makeText(context,"${args.coinId}", Toast.LENGTH_SHORT).show()
+        serviceCoin(args.coinId)
         return inflater.inflate(R.layout.fragment_coin_info, container, false)
+    }
+
+    private fun serviceCoin(coinId : Long){
+        coinApi.getCoin(coinId).enqueue(object : retrofit2.Callback<CoinResponse> {
+            override fun onFailure(call: Call<CoinResponse>, t: Throwable) {
+                Toast.makeText(context, "NO", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<CoinResponse>, response: Response<CoinResponse>) {
+                if (response.isSuccessful){
+                    val result = response.body()!!.data.coin
+                    setCoinInfo(result)
+
+                    Toast.makeText(context, "${result.name}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpChart()
         fillChart()
+
+    }
+
+    private fun setCoinInfo(coin: CoinInfo){
+        nameTextView.text = coin.name
+        descriptionTextView.text = coin.description
+        iconImageView.load(coin.iconUrl)
     }
 
     private fun getSocialIcon(type: String?): Int {

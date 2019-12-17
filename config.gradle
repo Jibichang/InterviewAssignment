@@ -14,7 +14,7 @@ ext.ver = [
         koinVersion                  : '2.0.1',
         roomVersion                  : '2.2.0-rc01',
         pagingVersion                : '2.1.0',
-        navigationVersion            : '2.2.0-alpha03'
+        navigationVersion            : '2.1.0'
 ]
 
 def ver = ext.ver
