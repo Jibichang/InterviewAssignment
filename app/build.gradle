@@ -8,9 +8,7 @@ apply plugin: "androidx.navigation.safeargs"
 android {
     compileSdkVersion config.compileSdkVersion
     buildToolsVersion config.buildToolsVersion
-    dataBinding {
-        enabled = true
-    }
+
     defaultConfig {
         applicationId config.applicationId
         minSdkVersion config.minSdkVersion

@@ -41,9 +41,5 @@ class CoinsAdapter(private var data: MutableList<Coin>) : RecyclerView.Adapter<C
                 iconImageView.load(item?.iconUrl)
             }
         }
-
-        companion object {
-
-        }
     }
 }
